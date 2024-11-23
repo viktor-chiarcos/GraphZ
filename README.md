@@ -108,4 +108,35 @@ compile and Upload
 Upload succesfully
 Leuchten erfolgreich
 
-2.
+2.Kreis, Lamp_Control-1P. 58, Auswahl Fortgeschrittener, 
+Import komando_arduino_start_lampe_benutzerdefinierte_farbe.gphz
+
+
+#define LAMP_PIN 8
+
+
+
+
+void setup()
+{
+  pinMode(LAMP_PIN, OUTPUT);
+  
+
+}
+void loop()
+{
+  digitalWrite(LAMP_PIN, HIGH);
+  delay(9900);
+  analogWrite(LAMP_PIN, 127);
+  delay(5000);
+  for (int br = 255; br > 0; br -= 5)
+  {
+    analogWrite(LAMP_PIN, br);
+    delay(5);
+  }
+
+}
+Save : Lampprogg.gphz 
+compile and Upload 
+Upload scussefull
+3.
