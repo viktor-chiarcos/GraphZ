@@ -3,4 +3,109 @@
 Meine Schaltkreise von [ZNATOK](https://znatok.ru/link/?start-graphz)
 
 1. Kreis , Light_01_04 P. 36, Auswahl Fortgeschrittener,( Import )[komando_licht_streifen_grün_rot_blau_gelb_hell-lila_lila_orange_weiß.gphz]
- Code:
+ Code:#include <Adafruit_GFX.h>
+#include <Adafruit_NeoMatrix.h>
+#include <Adafruit_NeoPixel.h>
+#include <FastLED.h>
+
+
+#define MATRIX_PIN 8
+#define BUTTON_PIN1 9
+#define BUTTON_PIN2 5
+
+
+Adafruit_NeoMatrix matrix = Adafruit_NeoMatrix(8, 8, MATRIX_PIN,
+                            NEO_MATRIX_BOTTOM + NEO_MATRIX_RIGHT +
+                            NEO_MATRIX_ROWS + NEO_MATRIX_PROGRESSIVE,
+                            NEO_GRB + NEO_KHZ800);
+
+const int MAX_BRIGHTNESS = 10;
+
+
+void setup()
+{
+  matrix.begin();
+  matrix.fillScreen(0);
+  matrix.setBrightness(MAX_BRIGHTNESS);
+  pinMode(BUTTON_PIN1, INPUT_PULLUP);
+  pinMode(BUTTON_PIN2, INPUT_PULLUP);
+  
+  matrix.fillScreen(0);
+  matrix.setPixelColor(0, 255, 255, 255);
+  matrix.setPixelColor(1, 255, 150, 0);
+  matrix.setPixelColor(2, 200, 0, 255);
+  matrix.setPixelColor(3, 100, 0, 255);
+  matrix.setPixelColor(4, 255, 255, 0);
+  matrix.setPixelColor(5, 0, 0, 255);
+  matrix.setPixelColor(6, 255, 0, 0);
+  matrix.setPixelColor(7, 150, 255, 0);
+  matrix.setPixelColor(8, 255, 150, 0);
+  matrix.setPixelColor(9, 200, 0, 255);
+  matrix.setPixelColor(10, 100, 0, 255);
+  matrix.setPixelColor(11, 255, 255, 0);
+  matrix.setPixelColor(12, 0, 0, 255);
+  matrix.setPixelColor(13, 255, 0, 0);
+  matrix.setPixelColor(14, 150, 255, 0);
+  matrix.setPixelColor(15, 255, 0, 0);
+  matrix.setPixelColor(16, 200, 0, 255);
+  matrix.setPixelColor(17, 100, 0, 255);
+  matrix.setPixelColor(18, 255, 255, 0);
+  matrix.setPixelColor(19, 0, 0, 255);
+  matrix.setPixelColor(20, 255, 0, 0);
+  matrix.setPixelColor(21, 150, 255, 0);
+  matrix.setPixelColor(22, 255, 0, 0);
+  matrix.setPixelColor(23, 0, 0, 255);
+  matrix.setPixelColor(24, 100, 0, 255);
+  matrix.setPixelColor(25, 255, 255, 0);
+  matrix.setPixelColor(26, 0, 0, 255);
+  matrix.setPixelColor(27, 255, 0, 0);
+  matrix.setPixelColor(28, 150, 255, 0);
+  matrix.setPixelColor(29, 255, 0, 0);
+  matrix.setPixelColor(30, 0, 0, 255);
+  matrix.setPixelColor(31, 255, 255, 0);
+  matrix.setPixelColor(32, 255, 255, 0);
+  matrix.setPixelColor(33, 0, 0, 255);
+  matrix.setPixelColor(34, 255, 0, 0);
+  matrix.setPixelColor(35, 150, 255, 0);
+  matrix.setPixelColor(36, 255, 0, 0);
+  matrix.setPixelColor(37, 0, 0, 255);
+  matrix.setPixelColor(38, 255, 255, 0);
+  matrix.setPixelColor(39, 100, 0, 255);
+  matrix.setPixelColor(40, 0, 0, 255);
+  matrix.setPixelColor(41, 255, 0, 0);
+  matrix.setPixelColor(42, 150, 255, 0);
+  matrix.setPixelColor(43, 255, 0, 0);
+  matrix.setPixelColor(44, 0, 0, 255);
+  matrix.setPixelColor(45, 255, 255, 0);
+  matrix.setPixelColor(46, 100, 0, 255);
+  matrix.setPixelColor(47, 200, 0, 255);
+  matrix.setPixelColor(48, 255, 0, 0);
+  matrix.setPixelColor(49, 150, 255, 0);
+  matrix.setPixelColor(50, 255, 0, 0);
+  matrix.setPixelColor(51, 0, 0, 255);
+  matrix.setPixelColor(52, 255, 255, 0);
+  matrix.setPixelColor(53, 100, 0, 255);
+  matrix.setPixelColor(54, 200, 0, 255);
+  matrix.setPixelColor(55, 255, 150, 0);
+  matrix.setPixelColor(56, 150, 255, 0);
+  matrix.setPixelColor(57, 255, 0, 0);
+  matrix.setPixelColor(58, 0, 0, 255);
+  matrix.setPixelColor(59, 255, 255, 0);
+  matrix.setPixelColor(60, 100, 0, 255);
+  matrix.setPixelColor(61, 200, 0, 255);
+  matrix.setPixelColor(62, 255, 150, 0);
+  matrix.setPixelColor(63, 255, 255, 255);
+  matrix.show();
+
+
+}
+void loop(){}
+
+compile and Upload
+error , Check COM PORT
+COM 4 
+compile and Upload
+Upload succesfully
+Leuchten erfolgreich
+
+2.
