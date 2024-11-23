@@ -1,0 +1,34 @@
+[
+{
+"SchemeId": "1",
+"SchemeMode": "Newbie"
+},
+{
+"BlockType": "LEDMatrixDraw",
+"BlockConnectionTag": "LEDMatrixDraw1",
+"OutputLine": "null",
+"OutputLineFromOrientation": "null",
+"OutputLineToOrientation": "null",
+"DiamondBlock": "false",
+"ChosenActionIndex": "-1",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "Green;Velvet;Red;Purple;Velvet;Green;Red;Blue;LigthBlue;Blue;Red;Green;Blue;LigthBlue;Velvet;Blue;Green;Red;Green;Yellow;Red;Green;LigthBlue;Blue;Red;Velvet;Blue;Red;Velvet;Velvet;Red;Green;Blue;Purple;Yellow;Green;LigthBlue;Red;Red;Velvet;Red;Yellow;LigthBlue;Red;Purple;Blue;Red;Green;Purple;Yellow;Red;Blue;Yellow;Purple;Yellow;Velvet;LigthBlue;Purple;Red;LigthBlue;Purple;Blue;Velvet;Blue;",
+"RealCoordsX": "2790",
+"RealCoordsY": "1080"
+},
+{
+"BlockType": "Start",
+"BlockConnectionTag": "Start2",
+"OutputLine": "LEDMatrixDraw1",
+"OutputLineFromOrientation": "vertical",
+"OutputLineToOrientation": "vertical",
+"DiamondBlock": "false",
+"ChosenActionIndex": "-1",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "null",
+"RealCoordsX": "2790",
+"RealCoordsY": "1440"
+}
+]

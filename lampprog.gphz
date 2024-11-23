@@ -1,0 +1,83 @@
+[
+{
+"SchemeId": "8",
+"SchemeMode": "Expert"
+},
+{
+"BlockType": "Lamp",
+"BlockConnectionTag": "Lamp1",
+"OutputLine": "PairLowerBlock3",
+"OutputLineFromOrientation": "vertical",
+"OutputLineToOrientation": "vertical",
+"DiamondBlock": "false",
+"ChosenActionIndex": "4",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "null",
+"RealCoordsX": "3150",
+"RealCoordsY": "1440"
+},
+{
+"BlockType": "PairBlock",
+"BlockConnectionTag": "PairBlock2",
+"OutputLine": "PairBlock2",
+"OutputLineFromOrientation": "vertical",
+"OutputLineToOrientation": "vertical",
+"DiamondBlock": "false",
+"IterationsPairBlock": "5",
+"RealCoordsX": "2340",
+"RealCoordsY": "900"
+},
+{
+"BlockType": "PairLowerBlock",
+"BlockConnectionTag": "PairLowerBlock3",
+"OutputLine": "null",
+"OutputLineFromOrientation": "null",
+"OutputLineToOrientation": "null",
+"DiamondBlock": "false",
+"RealCoordsX": "2340",
+"RealCoordsY": "1440"
+},
+{
+"BlockType": "Timer",
+"BlockConnectionTag": "Timer4",
+"OutputLine": "Lamp1",
+"OutputLineFromOrientation": "horizontal",
+"OutputLineToOrientation": "horizontal",
+"DiamondBlock": "false",
+"ChosenActionIndex": "1",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "null",
+"RealCoordsX": "2520",
+"RealCoordsY": "1440"
+},
+{
+"BlockType": "Lamp",
+"BlockConnectionTag": "Lamp5",
+"OutputLine": "Timer4",
+"OutputLineFromOrientation": "vertical",
+"OutputLineToOrientation": "horizontal",
+"DiamondBlock": "false",
+"ChosenActionIndex": "4",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "null",
+"RealCoordsX": "1890",
+"RealCoordsY": "1170"
+},
+{
+"BlockType": "Start",
+"BlockConnectionTag": "Start6",
+"OutputLine": "PairBlock2",
+"OutputLineFromOrientation": "vertical",
+"OutputLineToOrientation": "vertical",
+"DiamondBlock": "false",
+"ChosenActionIndex": "-1",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "null",
+"RealCoordsX": "1890",
+"RealCoordsY": "720"
+}
+]

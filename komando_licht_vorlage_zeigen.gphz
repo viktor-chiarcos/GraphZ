@@ -1,0 +1,33 @@
+[
+{
+"SchemeId": "1",
+"SchemeMode": "Newbie"
+},
+{
+"BlockType": "LEDMatrixTemplate",
+"BlockConnectionTag": "LEDMatrixTemplate1",
+"OutputLine": "LEDMatrixTemplate1",
+"OutputLineFromOrientation": "horizontal",
+"OutputLineToOrientation": "vertical",
+"DiamondBlock": "false",
+"ChosenActionIndex": "-1",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "Smile","RealCoordsX": "2610",
+"RealCoordsY": "1620"
+},
+{
+"BlockType": "Start",
+"BlockConnectionTag": "Start2",
+"OutputLine": "LEDMatrixTemplate1",
+"OutputLineFromOrientation": "vertical",
+"OutputLineToOrientation": "vertical",
+"DiamondBlock": "false",
+"ChosenActionIndex": "-1",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "null",
+"RealCoordsX": "2880",
+"RealCoordsY": "1350"
+}
+]

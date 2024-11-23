@@ -1,0 +1,33 @@
+[
+{
+"SchemeId": "1",
+"SchemeMode": "Newbie"
+},
+{
+"BlockType": "LEDMatrixText",
+"BlockConnectionTag": "LEDMatrixText1",
+"OutputLine": "null",
+"OutputLineFromOrientation": "null",
+"OutputLineToOrientation": "null",
+"DiamondBlock": "false",
+"ChosenActionIndex": "-1",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "255,0,0;125; VIKTOR UND OLGA SIND ZUHAUSE;","RealCoordsX": "2520",
+"RealCoordsY": "1350"
+},
+{
+"BlockType": "Start",
+"BlockConnectionTag": "Start2",
+"OutputLine": "LEDMatrixText1",
+"OutputLineFromOrientation": "vertical",
+"OutputLineToOrientation": "vertical",
+"DiamondBlock": "false",
+"ChosenActionIndex": "-1",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "null",
+"RealCoordsX": "2520",
+"RealCoordsY": "1170"
+}
+]

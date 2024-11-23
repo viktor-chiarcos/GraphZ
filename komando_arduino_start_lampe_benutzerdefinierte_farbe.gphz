@@ -1,0 +1,34 @@
+[
+{
+"SchemeId": "5",
+"SchemeMode": "Newbie"
+},
+{
+"BlockType": "RGB",
+"BlockConnectionTag": "RGB1",
+"OutputLine": "null",
+"OutputLineFromOrientation": "null",
+"OutputLineToOrientation": "null",
+"DiamondBlock": "false",
+"ChosenActionIndex": "2",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "null",
+"RealCoordsX": "2880",
+"RealCoordsY": "1170"
+},
+{
+"BlockType": "Start",
+"BlockConnectionTag": "Start2",
+"OutputLine": "RGB1",
+"OutputLineFromOrientation": "vertical",
+"OutputLineToOrientation": "vertical",
+"DiamondBlock": "false",
+"ChosenActionIndex": "-1",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "null",
+"RealCoordsX": "2790",
+"RealCoordsY": "1440"
+}
+]

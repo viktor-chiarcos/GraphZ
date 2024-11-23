@@ -1,0 +1,47 @@
+[
+{
+"SchemeId": "1",
+"SchemeMode": "Newbie"
+},
+{
+"BlockType": "LEDMatrixDraw",
+"BlockConnectionTag": "LEDMatrixDraw1",
+"OutputLine": "LEDMatrixText2",
+"OutputLineFromOrientation": "horizontal",
+"OutputLineToOrientation": "vertical",
+"DiamondBlock": "false",
+"ChosenActionIndex": "-1",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "none;none;none;none;none;none;none;none;none;Yellow;Yellow;Yellow;Yellow;Yellow;Yellow;Yellow;none;Yellow;none;Blue;none;Blue;none;Yellow;none;Yellow;none;none;Blue;none;none;Yellow;none;Yellow;Red;none;none;none;Red;Yellow;none;Yellow;none;Red;Red;Red;none;Yellow;none;Yellow;Yellow;Yellow;Yellow;Yellow;Yellow;Yellow;none;none;none;none;none;none;none;none;",
+"RealCoordsX": "2250",
+"RealCoordsY": "1530"
+},
+{
+"BlockType": "LEDMatrixText",
+"BlockConnectionTag": "LEDMatrixText2",
+"OutputLine": "LEDMatrixDraw1",
+"OutputLineFromOrientation": "vertical",
+"OutputLineToOrientation": "vertical",
+"DiamondBlock": "false",
+"ChosenActionIndex": "-1",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "190,33,167;125;VIKTOR;","RealCoordsX": "2520",
+"RealCoordsY": "1530"
+},
+{
+"BlockType": "Start",
+"BlockConnectionTag": "Start3",
+"OutputLine": "LEDMatrixText2",
+"OutputLineFromOrientation": "vertical",
+"OutputLineToOrientation": "vertical",
+"DiamondBlock": "false",
+"ChosenActionIndex": "-1",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "null",
+"RealCoordsX": "2520",
+"RealCoordsY": "1260"
+}
+]

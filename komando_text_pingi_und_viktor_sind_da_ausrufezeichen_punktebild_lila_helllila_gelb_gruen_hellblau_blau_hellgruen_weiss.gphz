@@ -1,0 +1,47 @@
+[
+{
+"SchemeId": "3",
+"SchemeMode": "Newbie"
+},
+{
+"BlockType": "LEDMatrixDraw",
+"BlockConnectionTag": "LEDMatrixDraw1",
+"OutputLine": "LEDMatrixText2",
+"OutputLineFromOrientation": "vertical",
+"OutputLineToOrientation": "vertical",
+"DiamondBlock": "false",
+"ChosenActionIndex": "-1",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "Purple;Velvet;Yellow;Green;LigthBlue;Blue;LightGreen;White;Velvet;Purple;Velvet;Yellow;Green;LigthBlue;Blue;LightGreen;Yellow;Velvet;Purple;Velvet;Yellow;Green;LigthBlue;Blue;Green;Yellow;Velvet;Purple;Velvet;Yellow;Green;LigthBlue;LigthBlue;Green;Yellow;Velvet;Purple;Velvet;Yellow;Green;Blue;LigthBlue;Green;Yellow;Velvet;Purple;Velvet;Yellow;LightGreen;Blue;LigthBlue;Green;Yellow;Velvet;Purple;Velvet;White;LightGreen;Blue;LigthBlue;Green;Yellow;Velvet;Purple;",
+"RealCoordsX": "2610",
+"RealCoordsY": "1170"
+},
+{
+"BlockType": "LEDMatrixText",
+"BlockConnectionTag": "LEDMatrixText2",
+"OutputLine": "LEDMatrixDraw1",
+"OutputLineFromOrientation": "horizontal",
+"OutputLineToOrientation": "vertical",
+"DiamondBlock": "false",
+"ChosenActionIndex": "-1",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "255,0,255;125; Pingi und Viktor sind da!;","RealCoordsX": "2340",
+"RealCoordsY": "1170"
+},
+{
+"BlockType": "Start",
+"BlockConnectionTag": "Start3",
+"OutputLine": "LEDMatrixText2",
+"OutputLineFromOrientation": "vertical",
+"OutputLineToOrientation": "vertical",
+"DiamondBlock": "false",
+"ChosenActionIndex": "-1",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "null",
+"RealCoordsX": "2430",
+"RealCoordsY": "990"
+}
+]
