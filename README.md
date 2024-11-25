@@ -317,5 +317,116 @@ Compile and Upload
 avarube.exe
 successfully
 Save komando_licht_lilla_blau
-4.
 
+4.
+Auswahl Arduino Light , Auswahl Light_01_04 , Auswahl Fortgeschrittener, Import komando_licht_lilla_blau 
+Code:
+#include <Adafruit_GFX.h>
+#include <Adafruit_NeoMatrix.h>
+#include <Adafruit_NeoPixel.h>
+#include <FastLED.h>
+
+
+#define MATRIX_PIN 8
+#define BUTTON_PIN1 9
+#define BUTTON_PIN2 5
+#define BUTTON_PIN3 6
+
+
+Adafruit_NeoMatrix matrix = Adafruit_NeoMatrix(8, 8, MATRIX_PIN,
+                            NEO_MATRIX_BOTTOM + NEO_MATRIX_RIGHT +
+                            NEO_MATRIX_ROWS + NEO_MATRIX_PROGRESSIVE,
+                            NEO_GRB + NEO_KHZ800);
+
+const int MAX_BRIGHTNESS = 10;
+
+
+void setup()
+{
+  matrix.begin();
+  matrix.fillScreen(0);
+  matrix.setBrightness(MAX_BRIGHTNESS);
+  pinMode(BUTTON_PIN1, INPUT_PULLUP);
+  pinMode(BUTTON_PIN2, INPUT_PULLUP);
+  pinMode(BUTTON_PIN3, INPUT_PULLUP);
+  
+  matrix.fillScreen(0);
+  matrix.setPixelColor(0, 100, 0, 255);
+  matrix.setPixelColor(1, 100, 0, 255);
+  matrix.setPixelColor(2, 100, 0, 255);
+  matrix.setPixelColor(3, 100, 0, 255);
+  matrix.setPixelColor(4, 100, 0, 255);
+  matrix.setPixelColor(5, 100, 0, 255);
+  matrix.setPixelColor(6, 100, 0, 255);
+  matrix.setPixelColor(7, 100, 0, 255);
+  matrix.setPixelColor(8, 100, 0, 255);
+  matrix.setPixelColor(9, 200, 0, 255);
+  matrix.setPixelColor(10, 200, 0, 255);
+  matrix.setPixelColor(11, 200, 0, 255);
+  matrix.setPixelColor(12, 200, 0, 255);
+  matrix.setPixelColor(13, 200, 0, 255);
+  matrix.setPixelColor(14, 200, 0, 255);
+  matrix.setPixelColor(15, 100, 0, 255);
+  matrix.setPixelColor(16, 100, 0, 255);
+  matrix.setPixelColor(17, 200, 0, 255);
+  matrix.setPixelColor(18, 0, 0, 255);
+  matrix.setPixelColor(19, 0, 0, 255);
+  matrix.setPixelColor(20, 0, 0, 255);
+  matrix.setPixelColor(21, 0, 0, 255);
+  matrix.setPixelColor(22, 200, 0, 255);
+  matrix.setPixelColor(23, 100, 0, 255);
+  matrix.setPixelColor(24, 100, 0, 255);
+  matrix.setPixelColor(25, 200, 0, 255);
+  matrix.setPixelColor(26, 0, 0, 255);
+  matrix.setPixelColor(27, 0, 200, 255);
+  matrix.setPixelColor(28, 0, 200, 255);
+  matrix.setPixelColor(29, 0, 0, 255);
+  matrix.setPixelColor(30, 200, 0, 255);
+  matrix.setPixelColor(31, 100, 0, 255);
+  matrix.setPixelColor(32, 100, 0, 255);
+  matrix.setPixelColor(33, 200, 0, 255);
+  matrix.setPixelColor(34, 0, 0, 255);
+  matrix.setPixelColor(35, 0, 200, 255);
+  matrix.setPixelColor(36, 0, 200, 255);
+  matrix.setPixelColor(37, 0, 0, 255);
+  matrix.setPixelColor(38, 200, 0, 255);
+  matrix.setPixelColor(39, 100, 0, 255);
+  matrix.setPixelColor(40, 100, 0, 255);
+  matrix.setPixelColor(41, 200, 0, 255);
+  matrix.setPixelColor(42, 0, 0, 255);
+  matrix.setPixelColor(43, 0, 0, 255);
+  matrix.setPixelColor(44, 0, 0, 255);
+  matrix.setPixelColor(45, 0, 0, 255);
+  matrix.setPixelColor(46, 200, 0, 255);
+  matrix.setPixelColor(47, 100, 0, 255);
+  matrix.setPixelColor(48, 100, 0, 255);
+  matrix.setPixelColor(49, 200, 0, 255);
+  matrix.setPixelColor(50, 200, 0, 255);
+  matrix.setPixelColor(51, 200, 0, 255);
+  matrix.setPixelColor(52, 200, 0, 255);
+  matrix.setPixelColor(53, 200, 0, 255);
+  matrix.setPixelColor(54, 200, 0, 255);
+  matrix.setPixelColor(55, 100, 0, 255);
+  matrix.setPixelColor(56, 100, 0, 255);
+  matrix.setPixelColor(57, 100, 0, 255);
+  matrix.setPixelColor(58, 100, 0, 255);
+  matrix.setPixelColor(59, 100, 0, 255);
+  matrix.setPixelColor(60, 100, 0, 255);
+  matrix.setPixelColor(61, 100, 0, 255);
+  matrix.setPixelColor(62, 100, 0, 255);
+  matrix.setPixelColor(63, 100, 0, 255);
+  matrix.show();
+
+
+}
+void loop(){}
+
+Compile And Upload
+avarube.exe
+Error Check COM Port
+COM9
+Compile And Upload
+avarube.exe
+Upload scussefull
+
+5.
