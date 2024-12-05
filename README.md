@@ -429,4 +429,13 @@ Compile And Upload
 avarube.exe
 Upload scussefull
 
-5.
+5.auswswahl,auswahl light_01-04 P. 36, Auswahl Fortgeschrittener, Import: komando_licht _streifen_grün_rot_blau_gelb_hell_lila_lila_orange_weiss , 
+Compile and Upload 
+avarube.exe
+Error, Check COM Port
+COM 10
+Compile and Upload
+avarube.exe
+Upload scussfull
+
+6.
