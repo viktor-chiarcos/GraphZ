@@ -1,0 +1,34 @@
+[
+{
+"SchemeId": "1",
+"SchemeMode": "Expert"
+},
+{
+"BlockType": "LEDMatrixDraw",
+"BlockConnectionTag": "LEDMatrixDraw1",
+"OutputLine": "null",
+"OutputLineFromOrientation": "null",
+"OutputLineToOrientation": "null",
+"DiamondBlock": "false",
+"ChosenActionIndex": "-1",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "Red;Red;Red;Red;Red;Red;Red;Red;Orange;Orange;Orange;Orange;Orange;Orange;Orange;Red;Yellow;Yellow;Yellow;Yellow;Yellow;Yellow;Orange;Red;Green;Green;Green;Green;Green;Yellow;Orange;Red;LigthBlue;LigthBlue;LigthBlue;LigthBlue;Green;Yellow;Orange;Red;Blue;Blue;Blue;LigthBlue;Green;Yellow;Orange;Red;Purple;Purple;Blue;LigthBlue;Green;Yellow;Orange;Red;Purple;Purple;Blue;LigthBlue;Green;Yellow;Orange;Red;",
+"RealCoordsX": "2610",
+"RealCoordsY": "1350"
+},
+{
+"BlockType": "Start",
+"BlockConnectionTag": "Start2",
+"OutputLine": "LEDMatrixDraw1",
+"OutputLineFromOrientation": "vertical",
+"OutputLineToOrientation": "vertical",
+"DiamondBlock": "false",
+"ChosenActionIndex": "-1",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "null",
+"RealCoordsX": "2610",
+"RealCoordsY": "1170"
+}
+]
