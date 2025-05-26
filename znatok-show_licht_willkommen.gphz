@@ -1,0 +1,47 @@
+[
+{
+"SchemeId": "1",
+"SchemeMode": "Expert"
+},
+{
+"BlockType": "Timer",
+"BlockConnectionTag": "Timer1",
+"OutputLine": "LEDMatrixText2",
+"OutputLineFromOrientation": "horizontal",
+"OutputLineToOrientation": "vertical",
+"DiamondBlock": "false",
+"ChosenActionIndex": "1",
+"MaskedTextBoxValue": "99",
+"ActionOptionValue": "null",
+"SubParams": "null",
+"RealCoordsX": "2430",
+"RealCoordsY": "1260"
+},
+{
+"BlockType": "LEDMatrixText",
+"BlockConnectionTag": "LEDMatrixText2",
+"OutputLine": "Timer1",
+"OutputLineFromOrientation": "vertical",
+"OutputLineToOrientation": "vertical",
+"DiamondBlock": "false",
+"ChosenActionIndex": "-1",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "255,0,0;125;Welcome to ZNATOK-Show on 25.05.2025 in Germany;","RealCoordsX": "2700",
+"RealCoordsY": "1260"
+},
+{
+"BlockType": "Start",
+"BlockConnectionTag": "Start3",
+"OutputLine": "LEDMatrixText2",
+"OutputLineFromOrientation": "vertical",
+"OutputLineToOrientation": "vertical",
+"DiamondBlock": "false",
+"ChosenActionIndex": "-1",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "null",
+"RealCoordsX": "2700",
+"RealCoordsY": "1080"
+}
+]

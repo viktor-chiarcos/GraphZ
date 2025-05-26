@@ -1,0 +1,74 @@
+[
+{
+"SchemeId": "1",
+"SchemeMode": "Newbie"
+},
+{
+"BlockType": "Timer",
+"BlockConnectionTag": "Timer1",
+"OutputLine": "LEDMatrixTemplate4",
+"OutputLineFromOrientation": "vertical",
+"OutputLineToOrientation": "vertical",
+"DiamondBlock": "false",
+"ChosenActionIndex": "1",
+"MaskedTextBoxValue": "99",
+"ActionOptionValue": "null",
+"SubParams": "null",
+"RealCoordsX": "2970",
+"RealCoordsY": "1170"
+},
+{
+"BlockType": "Timer",
+"BlockConnectionTag": "Timer2",
+"OutputLine": "LEDMatrixTemplate3",
+"OutputLineFromOrientation": "horizontal",
+"OutputLineToOrientation": "horizontal",
+"DiamondBlock": "false",
+"ChosenActionIndex": "1",
+"MaskedTextBoxValue": "99",
+"ActionOptionValue": "null",
+"SubParams": "null",
+"RealCoordsX": "2430",
+"RealCoordsY": "1440"
+},
+{
+"BlockType": "LEDMatrixTemplate",
+"BlockConnectionTag": "LEDMatrixTemplate3",
+"OutputLine": "Timer1",
+"OutputLineFromOrientation": "horizontal",
+"OutputLineToOrientation": "vertical",
+"DiamondBlock": "false",
+"ChosenActionIndex": "-1",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "Spiral","RealCoordsX": "2970",
+"RealCoordsY": "1440"
+},
+{
+"BlockType": "LEDMatrixTemplate",
+"BlockConnectionTag": "LEDMatrixTemplate4",
+"OutputLine": "Timer2",
+"OutputLineFromOrientation": "horizontal",
+"OutputLineToOrientation": "vertical",
+"DiamondBlock": "false",
+"ChosenActionIndex": "-1",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "Rainbow","RealCoordsX": "2700",
+"RealCoordsY": "1170"
+},
+{
+"BlockType": "Start",
+"BlockConnectionTag": "Start5",
+"OutputLine": "LEDMatrixTemplate4",
+"OutputLineFromOrientation": "vertical",
+"OutputLineToOrientation": "vertical",
+"DiamondBlock": "false",
+"ChosenActionIndex": "-1",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "null",
+"RealCoordsX": "2700",
+"RealCoordsY": "990"
+}
+]
