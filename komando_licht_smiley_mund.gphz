@@ -1,0 +1,76 @@
+[
+{
+"SchemeId": "4",
+"SchemeMode": "Newbie"
+},
+{
+"BlockType": "Timer",
+"BlockConnectionTag": "Timer1",
+"OutputLine": "LEDMatrixDraw4",
+"OutputLineFromOrientation": "horizontal",
+"OutputLineToOrientation": "horizontal",
+"DiamondBlock": "false",
+"ChosenActionIndex": "1",
+"MaskedTextBoxValue": "20",
+"ActionOptionValue": "null",
+"SubParams": "null",
+"RealCoordsX": "2250",
+"RealCoordsY": "990"
+},
+{
+"BlockType": "Timer",
+"BlockConnectionTag": "Timer2",
+"OutputLine": "LEDMatrixDraw3",
+"OutputLineFromOrientation": "vertical",
+"OutputLineToOrientation": "horizontal",
+"DiamondBlock": "false",
+"ChosenActionIndex": "1",
+"MaskedTextBoxValue": "20",
+"ActionOptionValue": "null",
+"SubParams": "null",
+"RealCoordsX": "2520",
+"RealCoordsY": "1440"
+},
+{
+"BlockType": "LEDMatrixDraw",
+"BlockConnectionTag": "LEDMatrixDraw3",
+"OutputLine": "Timer1",
+"OutputLineFromOrientation": "horizontal",
+"OutputLineToOrientation": "horizontal",
+"DiamondBlock": "false",
+"ChosenActionIndex": "-1",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "none;none;Yellow;Yellow;Yellow;Yellow;none;none;none;Yellow;Yellow;Yellow;Yellow;Yellow;Yellow;none;Yellow;Red;Red;Yellow;Yellow;Red;Red;Yellow;Yellow;Red;Red;Yellow;Yellow;Red;Red;Yellow;Yellow;Yellow;Yellow;Yellow;Yellow;Yellow;Yellow;Yellow;Yellow;Yellow;Red;Red;Red;Red;Yellow;Yellow;none;Yellow;Yellow;Yellow;Yellow;Yellow;Yellow;none;none;none;Yellow;Yellow;Yellow;Yellow;none;none;",
+"RealCoordsX": "2250",
+"RealCoordsY": "1260"
+},
+{
+"BlockType": "LEDMatrixDraw",
+"BlockConnectionTag": "LEDMatrixDraw4",
+"OutputLine": "Timer2",
+"OutputLineFromOrientation": "vertical",
+"OutputLineToOrientation": "vertical",
+"DiamondBlock": "false",
+"ChosenActionIndex": "-1",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "White;Blue;Blue;Blue;Blue;Blue;Blue;Green;Yellow;Yellow;Yellow;Yellow;Yellow;Yellow;Yellow;Green;Yellow;Purple;Purple;Purple;LigthBlue;LigthBlue;Velvet;Green;Yellow;Purple;LightGreen;Orange;Orange;LigthBlue;Velvet;Green;Yellow;Purple;LightGreen;White;Red;LigthBlue;Velvet;Green;Yellow;Purple;LigthBlue;LigthBlue;LigthBlue;LigthBlue;Velvet;Green;Yellow;Velvet;Velvet;Velvet;Velvet;Velvet;Velvet;Green;Yellow;Green;Green;Green;Green;Green;Green;Green;",
+"RealCoordsX": "2700",
+"RealCoordsY": "1260"
+},
+{
+"BlockType": "Start",
+"BlockConnectionTag": "Start5",
+"OutputLine": "LEDMatrixDraw4",
+"OutputLineFromOrientation": "vertical",
+"OutputLineToOrientation": "vertical",
+"DiamondBlock": "false",
+"ChosenActionIndex": "-1",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "null",
+"RealCoordsX": "2700",
+"RealCoordsY": "1080"
+}
+]
