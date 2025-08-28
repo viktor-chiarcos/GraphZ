@@ -1,0 +1,76 @@
+[
+{
+"SchemeId": "4",
+"SchemeMode": "Newbie"
+},
+{
+"BlockType": "Timer",
+"BlockConnectionTag": "Timer1",
+"OutputLine": "LEDMatrixDraw4",
+"OutputLineFromOrientation": "horizontal",
+"OutputLineToOrientation": "horizontal",
+"DiamondBlock": "false",
+"ChosenActionIndex": "1",
+"MaskedTextBoxValue": "20",
+"ActionOptionValue": "null",
+"SubParams": "null",
+"RealCoordsX": "2880",
+"RealCoordsY": "1260"
+},
+{
+"BlockType": "Timer",
+"BlockConnectionTag": "Timer2",
+"OutputLine": "LEDMatrixDraw3",
+"OutputLineFromOrientation": "horizontal",
+"OutputLineToOrientation": "vertical",
+"DiamondBlock": "false",
+"ChosenActionIndex": "1",
+"MaskedTextBoxValue": "20",
+"ActionOptionValue": "null",
+"SubParams": "null",
+"RealCoordsX": "2340",
+"RealCoordsY": "1260"
+},
+{
+"BlockType": "LEDMatrixDraw",
+"BlockConnectionTag": "LEDMatrixDraw3",
+"OutputLine": "Timer1",
+"OutputLineFromOrientation": "vertical",
+"OutputLineToOrientation": "vertical",
+"DiamondBlock": "false",
+"ChosenActionIndex": "-1",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;Blue;",
+"RealCoordsX": "2520",
+"RealCoordsY": "1440"
+},
+{
+"BlockType": "LEDMatrixDraw",
+"BlockConnectionTag": "LEDMatrixDraw4",
+"OutputLine": "Timer2",
+"OutputLineFromOrientation": "horizontal",
+"OutputLineToOrientation": "vertical",
+"DiamondBlock": "false",
+"ChosenActionIndex": "-1",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "none;none;none;none;none;none;none;none;none;none;none;none;none;none;none;none;none;none;none;none;none;none;none;none;none;none;none;none;none;none;none;none;none;none;none;none;none;none;none;none;none;none;none;none;none;none;none;none;none;none;none;none;none;none;none;none;none;none;none;Red;none;none;none;none;",
+"RealCoordsX": "2610",
+"RealCoordsY": "1080"
+},
+{
+"BlockType": "Start",
+"BlockConnectionTag": "Start5",
+"OutputLine": "LEDMatrixDraw4",
+"OutputLineFromOrientation": "vertical",
+"OutputLineToOrientation": "vertical",
+"DiamondBlock": "false",
+"ChosenActionIndex": "-1",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "null",
+"RealCoordsX": "2610",
+"RealCoordsY": "990"
+}
+]

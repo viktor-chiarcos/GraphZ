@@ -1,0 +1,62 @@
+[
+{
+"SchemeId": "5",
+"SchemeMode": "Expert"
+},
+{
+"BlockType": "RGB",
+"BlockConnectionTag": "RGB1",
+"OutputLine": "RGB3",
+"OutputLineFromOrientation": "horizontal",
+"OutputLineToOrientation": "horizontal",
+"DiamondBlock": "false",
+"ChosenActionIndex": "3",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "null",
+"RealCoordsX": "2340",
+"RealCoordsY": "1170"
+},
+{
+"BlockType": "Timer",
+"BlockConnectionTag": "Timer2",
+"OutputLine": "RGB1",
+"OutputLineFromOrientation": "horizontal",
+"OutputLineToOrientation": "vertical",
+"DiamondBlock": "false",
+"ChosenActionIndex": "1",
+"MaskedTextBoxValue": "20",
+"ActionOptionValue": "null",
+"SubParams": "null",
+"RealCoordsX": "2340",
+"RealCoordsY": "1440"
+},
+{
+"BlockType": "RGB",
+"BlockConnectionTag": "RGB3",
+"OutputLine": "Timer2",
+"OutputLineFromOrientation": "vertical",
+"OutputLineToOrientation": "vertical",
+"DiamondBlock": "false",
+"ChosenActionIndex": "3",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "null",
+"RealCoordsX": "2700",
+"RealCoordsY": "1440"
+},
+{
+"BlockType": "Start",
+"BlockConnectionTag": "Start4",
+"OutputLine": "RGB3",
+"OutputLineFromOrientation": "vertical",
+"OutputLineToOrientation": "vertical",
+"DiamondBlock": "false",
+"ChosenActionIndex": "-1",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "null",
+"RealCoordsX": "2700",
+"RealCoordsY": "1170"
+}
+]

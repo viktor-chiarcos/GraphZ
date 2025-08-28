@@ -1,0 +1,90 @@
+[
+{
+"SchemeId": "7",
+"SchemeMode": "Expert"
+},
+{
+"BlockType": "Start",
+"BlockConnectionTag": "Start1",
+"OutputLine": "Motor5",
+"OutputLineFromOrientation": "vertical",
+"OutputLineToOrientation": "vertical",
+"DiamondBlock": "false",
+"ChosenActionIndex": "-1",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "null",
+"RealCoordsX": "2700",
+"RealCoordsY": "990"
+},
+{
+"BlockType": "Timer",
+"BlockConnectionTag": "Timer2",
+"OutputLine": "Motor3",
+"OutputLineFromOrientation": "vertical",
+"OutputLineToOrientation": "horizontal",
+"DiamondBlock": "false",
+"ChosenActionIndex": "1",
+"MaskedTextBoxValue": "99",
+"ActionOptionValue": "null",
+"SubParams": "null",
+"RealCoordsX": "2700",
+"RealCoordsY": "1530"
+},
+{
+"BlockType": "Motor",
+"BlockConnectionTag": "Motor3",
+"OutputLine": "Timer4",
+"OutputLineFromOrientation": "horizontal",
+"OutputLineToOrientation": "horizontal",
+"DiamondBlock": "false",
+"ChosenActionIndex": "1",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "null",
+"RealCoordsX": "2340",
+"RealCoordsY": "1530"
+},
+{
+"BlockType": "Timer",
+"BlockConnectionTag": "Timer4",
+"OutputLine": "Motor6",
+"OutputLineFromOrientation": "vertical",
+"OutputLineToOrientation": "vertical",
+"DiamondBlock": "false",
+"ChosenActionIndex": "1",
+"MaskedTextBoxValue": "50",
+"ActionOptionValue": "null",
+"SubParams": "null",
+"RealCoordsX": "2340",
+"RealCoordsY": "1080"
+},
+{
+"BlockType": "Motor",
+"BlockConnectionTag": "Motor5",
+"OutputLine": "Timer2",
+"OutputLineFromOrientation": "vertical",
+"OutputLineToOrientation": "horizontal",
+"DiamondBlock": "false",
+"ChosenActionIndex": "2",
+"MaskedTextBoxValue": "100",
+"ActionOptionValue": "null",
+"SubParams": "null",
+"RealCoordsX": "2700",
+"RealCoordsY": "1080"
+},
+{
+"BlockType": "Motor",
+"BlockConnectionTag": "Motor6",
+"OutputLine": "Motor5",
+"OutputLineFromOrientation": "horizontal",
+"OutputLineToOrientation": "horizontal",
+"DiamondBlock": "false",
+"ChosenActionIndex": "0",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "null",
+"RealCoordsX": "2160",
+"RealCoordsY": "1260"
+}
+]
