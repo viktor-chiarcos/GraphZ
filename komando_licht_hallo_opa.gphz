@@ -1,0 +1,88 @@
+[
+{
+"SchemeId": "1",
+"SchemeMode": "Expert"
+},
+{
+"BlockType": "Timer",
+"BlockConnectionTag": "Timer1",
+"OutputLine": "LEDMatrixText5",
+"OutputLineFromOrientation": "horizontal",
+"OutputLineToOrientation": "vertical",
+"DiamondBlock": "false",
+"ChosenActionIndex": "1",
+"MaskedTextBoxValue": "02",
+"ActionOptionValue": "null",
+"SubParams": "null",
+"RealCoordsX": "4140",
+"RealCoordsY": "3600"
+},
+{
+"BlockType": "Timer",
+"BlockConnectionTag": "Timer2",
+"OutputLine": "LEDMatrixTemplate3",
+"OutputLineFromOrientation": "horizontal",
+"OutputLineToOrientation": "vertical",
+"DiamondBlock": "false",
+"ChosenActionIndex": "1",
+"MaskedTextBoxValue": "02",
+"ActionOptionValue": "null",
+"SubParams": "null",
+"RealCoordsX": "3600",
+"RealCoordsY": "3600"
+},
+{
+"BlockType": "LEDMatrixTemplate",
+"BlockConnectionTag": "LEDMatrixTemplate3",
+"OutputLine": "Timer1",
+"OutputLineFromOrientation": "horizontal",
+"OutputLineToOrientation": "vertical",
+"DiamondBlock": "false",
+"ChosenActionIndex": "-1",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "Spiral","RealCoordsX": "3870",
+"RealCoordsY": "3870"
+},
+{
+"BlockType": "LEDMatrixTemplate",
+"BlockConnectionTag": "LEDMatrixTemplate4",
+"OutputLine": "Timer2",
+"OutputLineFromOrientation": "vertical",
+"OutputLineToOrientation": "vertical",
+"DiamondBlock": "false",
+"ChosenActionIndex": "-1",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "Smile","RealCoordsX": "3870",
+"RealCoordsY": "3600"
+},
+{
+"BlockType": "LEDMatrixText",
+"BlockConnectionTag": "LEDMatrixText5",
+"OutputLine": "LEDMatrixTemplate4",
+"OutputLineFromOrientation": "vertical",
+"OutputLineToOrientation": "vertical",
+"DiamondBlock": "false",
+"ChosenActionIndex": "-1",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "255,0,0;125; Привет Дедушка!
+HALLO OPA!;","RealCoordsX": "3870",
+"RealCoordsY": "3330"
+},
+{
+"BlockType": "Start",
+"BlockConnectionTag": "Start6",
+"OutputLine": "LEDMatrixText5",
+"OutputLineFromOrientation": "vertical",
+"OutputLineToOrientation": "vertical",
+"DiamondBlock": "false",
+"ChosenActionIndex": "-1",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "null",
+"RealCoordsX": "3870",
+"RealCoordsY": "3150"
+}
+]
