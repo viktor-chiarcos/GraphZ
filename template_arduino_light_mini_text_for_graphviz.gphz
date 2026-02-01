@@ -1,0 +1,39 @@
+[
+{
+"SchemeId": "1",
+"SchemeMode": "Expert"
+},
+{
+"BlockType": "LEDMatrixText",
+"BlockConnectionTag": "LEDMatrixText1",
+"OutputLine": "null",
+"OutputLineFromOrientation": "null",
+"OutputLineToOrientation": "null",
+"DiamondBlock": "false",
+"ChosenActionIndex": "-1",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "255,255,255;375; customtext.arduino-light.znatokgraphz.graphviz("Benutzerdefinierter Text")
+##
+## -- COMMENT --
+## Sekunden -- BEISPIELTEXT: 1 --
+## FARBE: Dunkelblau
+## --END/COMMENT\END--
+;","RealCoordsX": "2430",
+"RealCoordsY": "1170"
+},
+{
+"BlockType": "Start",
+"BlockConnectionTag": "Start2",
+"OutputLine": "LEDMatrixText1",
+"OutputLineFromOrientation": "vertical",
+"OutputLineToOrientation": "vertical",
+"DiamondBlock": "false",
+"ChosenActionIndex": "-1",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "null",
+"RealCoordsX": "2430",
+"RealCoordsY": "990"
+}
+]
