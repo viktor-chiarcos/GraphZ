@@ -1,0 +1,57 @@
+Digraph schaltkreis {
+
+	/* (Arguino light mini) Light_01-18 CTP.21 */
+
+	subgraph part_117 { label="117"
+		cluster=true
+		part_117_plus[label="+" shape=none ]
+		part_117_minus[label="-" shape=none]
+	}
+
+	subgraph part_111 { label=111
+	    cluster=true
+		// oben
+			part_111_plus[label="+" shape=none]
+			//part_111 -> part_111_RX
+			part_111_minus[label="-" shape=none]
+		// links
+			//+
+			//part_111 -> part_111_A4
+			//part_111 -> part_111_D7
+			part_111_D8[label="D8" shape=none]
+		// unten
+			// D8
+			//part_111 -> part_111_TX
+			//part_111 -> part_111_D9
+		// rechts
+			// -
+			//part_111 -> part_111_D5
+			//part_111 -> part_111_D6
+			//part_111 -> part_111_D9
+	}
+	
+	subgraph part_79 { label="79"
+		cluster=true
+		part_79_plus[label="+" shape=none]
+		part_79_mitte[label="mitte" shape=none]
+		part_79_minus[label="-" shape=none]
+	}
+
+
+	// schaltkreis
+	part_117_plus -> part_111_plus
+	part_117_plus -> part_79_plus
+	part_79_mitte -> part_111_D8
+	part_79_minus -> part_111_minus
+	part_79_minus -> part_117_minus
+
+	/* test shapes	
+	X 
+	lampe[color=white,label="",shapefile="lampe.gif"] 
+	Y
+
+	X -> lampe
+	lampe -> Y
+
+	*/
+}

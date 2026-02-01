@@ -9,3 +9,9 @@ Note:
 - two subtasks: the graphical program and the circuit
 
 
+## curcuit
+
+see `schaltkreis.dot`
+
+## graphical program (rechenablaufplan)
+
