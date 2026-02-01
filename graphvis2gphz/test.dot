@@ -1,0 +1,9 @@
+Digraph schaltkreis {
+
+	X 
+	lampe[color=white,label="",shapefile="lampe.gif"] 
+	Y
+
+	X -> lampe
+	lampe -> Y
+}
