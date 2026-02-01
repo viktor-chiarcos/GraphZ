@@ -1,0 +1,90 @@
+[
+{
+"SchemeId": "7",
+"SchemeMode": "Expert"
+},
+{
+"BlockType": "Timer",
+"BlockConnectionTag": "Timer1",
+"OutputLine": "null",
+"OutputLineFromOrientation": "null",
+"OutputLineToOrientation": "null",
+"DiamondBlock": "false",
+"ChosenActionIndex": "0",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "null",
+"RealCoordsX": "2790",
+"RealCoordsY": "1530"
+},
+{
+"BlockType": "DiodeBlue1",
+"BlockConnectionTag": "DiodeBlue12",
+"OutputLine": "null",
+"OutputLineFromOrientation": "null",
+"OutputLineToOrientation": "null",
+"DiamondBlock": "false",
+"ChosenActionIndex": "0",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "null",
+"RealCoordsX": "2430",
+"RealCoordsY": "1530"
+},
+{
+"BlockType": "DiodeRed1",
+"BlockConnectionTag": "DiodeRed13",
+"OutputLine": "DiodeBlue12",
+"OutputLineFromOrientation": "vertical",
+"OutputLineToOrientation": "vertical",
+"DiamondBlock": "false",
+"ChosenActionIndex": "1",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "null",
+"RealCoordsX": "2430",
+"RealCoordsY": "1260"
+},
+{
+"BlockType": "Timer",
+"BlockConnectionTag": "Timer4",
+"OutputLine": "DiodeRed13",
+"OutputLineFromOrientation": "vertical",
+"OutputLineToOrientation": "vertical",
+"DiamondBlock": "false",
+"ChosenActionIndex": "1",
+"MaskedTextBoxValue": "99",
+"ActionOptionValue": "null",
+"SubParams": "null",
+"RealCoordsX": "2790",
+"RealCoordsY": "1260"
+},
+{
+"BlockType": "DiodeRed1",
+"BlockConnectionTag": "DiodeRed15",
+"OutputLine": "Timer4",
+"OutputLineFromOrientation": "horizontal",
+"OutputLineToOrientation": "horizontal",
+"DiamondBlock": "false",
+"ChosenActionIndex": "0",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "null",
+"RealCoordsX": "2430",
+"RealCoordsY": "1080"
+},
+{
+"BlockType": "Start",
+"BlockConnectionTag": "Start6",
+"OutputLine": "DiodeRed15",
+"OutputLineFromOrientation": "vertical",
+"OutputLineToOrientation": "vertical",
+"DiamondBlock": "false",
+"ChosenActionIndex": "-1",
+"MaskedTextBoxValue": "null",
+"ActionOptionValue": "null",
+"SubParams": "null",
+"RealCoordsX": "2610",
+"RealCoordsY": "1080"
+}
+]
