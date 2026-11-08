@@ -10,7 +10,7 @@ def analyze_graph(project: Project) -> dict:
 
     Returns a dict with:
     - "roots": list of start block tags
-    - "chains": list of (tag, successor_tag) tuples
+    - "chains": list of (tag, successor_tag_or_None) tuples
     - "cycles": list of tags that participate in cycles
     - "unreachable": list of block tags not reachable from any start
     - "iteration_pairs": dict pair_tag -> iteration count string
@@ -19,13 +19,10 @@ def analyze_graph(project: Project) -> dict:
 
     # Build lookup
     blocks_by_tag: dict[str, Block] = {}
-    tag_to_chosen: dict[str, str] = {}
-
     for block in project.blocks:
         tag = block.tag
         if tag is not None:
             blocks_by_tag[tag] = block
-            tag_to_chosen[tag] = block.chosen_action_index or "null"
 
     # Find Start blocks (ChosenActionIndex = "-1")
     roots: list[str] = []

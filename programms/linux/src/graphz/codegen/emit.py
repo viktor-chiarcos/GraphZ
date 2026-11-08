@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-from graphz.model import Block, Project
 from graphz.codegen.analyze import analyze_graph
 
 # Pin profiles per kit (from oracle capture)
@@ -18,16 +17,19 @@ BASIC_PINS = {
     "traffic_light_yellow": 6,
     "traffic_light_green": 9,
     "traffic_light_arrow": 8,
+    "motor_pwm": 3,
+    "motor_dir": 4,
+    "rgb_pin": 11,
+    "variable_resistor": None,  # analog pin, handled specially
+    "binary_output": 7,
 }
 
-# Timer: centiseconds -> milliseconds
-def centis_to_ms(cs: str) -> str:
-    """Convert centiseconds (GraphZ timer values) to milliseconds for delay()."""
-    try:
-        return str(int(cs) * 100)
-    except (ValueError, TypeError):
-        return "0"
-
+MOBILE_PINS = {
+    "ultrasonic_trig": 12,
+    "ultrasonic_echo": 13,
+    "synth_pin": 10,
+    "matrix_pins": (6, 7),  # 8x8 matrix NeoPixel config
+}
 
 # Named color RGB lookup (from oracle)
 NAMED_COLORS = {
@@ -43,6 +45,21 @@ NAMED_COLORS = {
     "LigthBlue": (0, 200, 255),  # original GraphZ spelling
 }
 
+# Block type categories
+BLOCK_CATEGORIES = {
+    "light": {"LEDMatrixText", "LEDMatrixDraw", "LEDMatrixTemplate", "Timer", "Lamp", "RGB", "Start", "UniversalIndicator"},
+    "basic": {"TrafficLight", "Motor", "DiodeRed1", "DiodeBlue1", "Lamp", "RGB", "Start", "VariableResistor", "BinaryOutput"},
+    "mobile": {"LEDMatrixText", "LEDMatrixDraw", "LEDMatrixTemplate", "Synth", "Ultrasonic", "Start", "Button", "RunningLights"},
+}
+
+# Timer: centiseconds -> milliseconds
+def centis_to_ms(cs: str) -> str:
+    """Convert centiseconds (GraphZ timer values) to milliseconds for delay()."""
+    try:
+        return str(int(cs) * 100)
+    except (ValueError, TypeError):
+        return "0"
+
 
 def rgb_str(rgb) -> str:
     """Convert RGB tuple to FastLED/NeoPixel color string."""
@@ -56,9 +73,15 @@ def named_color_rgb(name: str) -> tuple | None:
     return NAMED_COLORS.get(name)
 
 
-def get_pin(profile: dict, key: str, default: int = 8) -> int:
-    """Get a pin number from a circuit profile, with a default."""
-    return profile.get(key, default)
+def get_pin(profile: dict, key: str, default: int = 8) -> int | None:
+    """Get a pin number from a circuit profile, with a default.
+
+    Returns None for pins that are analog/ special-cased.
+    """
+    val = profile.get(key, default)
+    if val is None or val is True:  # analog pin marker
+        return None
+    return val
 
 
 def emit_sketch(project: Project, kit: str = "Light") -> str:
@@ -66,7 +89,7 @@ def emit_sketch(project: Project, kit: str = "Light") -> str:
 
     Args:
         project: Parsed Project from the tolerant parser.
-        kit: Circuit kit name ("Light" or "Start").
+        kit: Circuit kit name ("Light", "Basic", or "Mobile").
 
     Returns:
         Source code as a string (valid UTF-8 C++).
@@ -81,8 +104,10 @@ def emit_sketch(project: Project, kit: str = "Light") -> str:
     # Select pin profile
     if kit == "Light":
         pins = LIGHT_PINS
-    elif kit == "Start":
+    elif kit == "Basic":
         pins = BASIC_PINS
+    elif kit == "Mobile":
+        pins = MOBILE_PINS
     else:
         pins = {}
 
@@ -94,11 +119,38 @@ def emit_sketch(project: Project, kit: str = "Light") -> str:
         "#include <FastLED.h>",
     ]
 
-    # Build setup() code
-    setup_lines: List[str] = []
+    # Helper: emit RGB color from named color or RGB triple
+    def emit_color(color_spec) -> str:
+        """Convert a SubParams-style color spec to FastLED CRGB.
 
-    # Matrix setup (for Light kit)
-    if kit == "Light":
+        color_spec can be:
+        - An RGB triple like "255,0,0"
+        - A named color like "Red", "Blue", etc.
+        - A comma-separated list (first triplet wins)
+        """
+        if color_spec is None:
+            return "CRGB::Black"
+        parts = str(color_spec).split(";")
+        # First triplet wins
+        triplet = parts[0].split(",")
+        if len(triplet) == 3:
+            try:
+                r, g, b = int(triplet[0]), int(triplet[1]), int(triplet[2])
+                return f"CRGB({r}, {g}, {b})"
+            except ValueError:
+                pass
+        # Named color
+        name = parts[0].strip()
+        rgb = named_color_rgb(name)
+        if rgb:
+            return f"CRGB({rgb[0]}, {rgb[1]}, {rgb[2]})"
+        return "CRGB::Black"
+
+    # Build setup() code
+    setup_lines: list[str] = []
+
+    # Matrix setup (for Light/Mobile kits)
+    if kit in ("Light", "Mobile"):
         matrix_pin = pins.get("matrix_data", 8)
         setup_lines.append("Adafruit_NeoMatrix matrix = Adafruit_NeoMatrix(8, 8, " +
                            f"{matrix_pin}, NEO_MATRIX_BOTTOM + NEO_MATRIX_RIGHT +" +
@@ -108,51 +160,90 @@ def emit_sketch(project: Project, kit: str = "Light") -> str:
         setup_lines.append("matrix.setBrightness(10);")
 
     # Pin mode setup
-    for pin_key, pin_num in pins.items():
-        setup_lines.append(f"pinMode({pin_num}, INPUT_PULLUP);")
+    # Collect all pins used in this project
+    used_pins: set[int] = set()
+    for block in project.blocks:
+        # Check sub_params for pin references or color values
+        sp = block.sub_params
+        if sp:
+            # Parse first triplet for RGB
+            first_semi = str(sp).split(";")[0]
+            triplet = first_semi.split(",")
+            if len(triplet) == 3:
+                try:
+                    r, g, b = int(triplet[0]), int(triplet[1]), int(triplet[2])
+                    # If it looks like an RGB color, add as a used pin if RGB pin configured
+                    if kit == "Basic" and pins.get("rgb_pin"):
+                        used_pins.add(pins["rgb_pin"])
+                except ValueError:
+                    pass
 
-    # Loop over unreachable blocks - just note them, don't generate code
-    if unreachable:
-        setup_lines.append(f"// {len(unreachable)} unreachable blocks preserved on save")
+    # Standard pin modes for kit
+    if kit == "Light":
+        for pin_key, pin_num in pins.items():
+            if pin_num is not None:
+                setup_lines.append(f"pinMode({pin_num}, INPUT_PULLUP);")
+    elif kit == "Basic":
+        # Traffic light pins
+        for pin_key in ["traffic_light_red", "traffic_light_yellow", "traffic_light_green", "traffic_light_arrow"]:
+            pin_num = pins.get(pin_key)
+            if pin_num is not None:
+                setup_lines.append(f"pinMode({pin_num}, OUTPUT);")
+        # Motor pins
+        for motor_key in ["motor_pwm", "motor_dir"]:
+            pin_num = pins.get(motor_key)
+            if pin_num is not None:
+                setup_lines.append(f"pinMode({pin_num}, OUTPUT);")
+        # RGB pin
+        rgb_pin = pins.get("rgb_pin")
+        if rgb_pin is not None:
+            setup_lines.append(f"pinMode({rgb_pin}, OUTPUT);")
+        # Binary output
+        bin_pin = pins.get("binary_output")
+        if bin_pin is not None:
+            setup_lines.append(f"pinMode({bin_pin}, OUTPUT);")
+    elif kit == "Mobile":
+        # Ultrasonic pins
+        for uc_key in ["ultrasonic_trig", "ultrasonic_echo"]:
+            pin_num = pins.get(uc_key)
+            if pin_num is not None:
+                setup_lines.append(f"pinMode({pin_num}, OUTPUT);")
+        # Synth pin
+        synth_pin = pins.get("synth_pin")
+        if synth_pin is not None:
+            setup_lines.append(f"pinMode({synth_pin}, OUTPUT);")
+        # Matrix pins
+        matrix_pins = pins.get("matrix_pins", (6, 7))
+        if isinstance(matrix_pins, tuple) and len(matrix_pins) >= 2:
+            setup_lines.append(f"pinMode({matrix_pins[0]}, OUTPUT);")
+            setup_lines.append(f"pinMode({matrix_pins[1]}, OUTPUT);")
 
-    # Emit chain code (acyclic paths from Start)
-    # For each root, follow chains and emit code
-    emitted_tags: Set[str] = set()
-
-    for root_tag in roots:
-        if root_tag in emitted_tags:
-            continue
-        emitted_tags.add(root_tag)
-
-        # Follow the chain
-        chain_tags: List[str] = [root_tag]
-        current = root_tag
-        while current in blocks_by_tag_lookup:
-            block = blocks_by_tag_lookup[current]
-            succ = block.output_line
-            if succ and succ in blocks_by_tag_lookup and succ not in chain_tags:
-                chain_tags.append(succ)
-                current = succ
-            else:
-                break
-
-    # Emit loop constructs for cycles
-    loop_lines: List[str] = []
+    # Loop constructs for cycles
+    loop_lines: list[str] = []
     for cycle_tag in cycles:
-        # Emit while(1) in setup for cyclic programs
         loop_lines.append(f"  // Cycle at tag {cycle_tag}")
         loop_lines.append("  while(1) {")
-        # Add code for blocks in the cycle
-        # Simple: just toggle/delay for demonstration
-        loop_lines.append("    delay(500);")
+        # Add appropriate delay based on kit
+        if kit == "Light":
+            loop_lines.append("    delay(500);")
+        elif kit == "Basic":
+            loop_lines.append("    delay(200);")  # traffic light timing
+        elif kit == "Mobile":
+            loop_lines.append("    delay(100);")
         loop_lines.append("  }")
+
+    # Emit iteration pair handling
+    iteration_code: list[str] = []
+    for pair_tag, iterations in iteration_pairs.items():
+        iteration_code.append(f"  // Iteration pair at tag {pair_tag}: {iterations} iterations")
+        iteration_code.append(f"  for(int i = 0; i < {iterations}; i++) {{")
 
     # Timer delays helper
     def delay_ms(cs_value: str) -> str:
         return centis_to_ms(cs_value)
 
     # Build the complete sketch
-    sketch_parts: List[str] = []
+    sketch_parts: list[str] = []
 
     # Includes
     sketch_parts.append("// Auto-generated by GraphZ Linux port")
@@ -176,6 +267,8 @@ def emit_sketch(project: Project, kit: str = "Light") -> str:
         sketch_parts.append(sl)
     for ll in loop_lines:
         sketch_parts.append(ll)
+    for ic in iteration_code:
+        sketch_parts.append(ic)
     sketch_parts.append("}")
 
     # loop()
@@ -187,20 +280,15 @@ def emit_sketch(project: Project, kit: str = "Light") -> str:
     return "\n".join(sketch_parts)
 
 
-# Internal lookup (populated by emit_sketch)
-blocks_by_tag_lookup: Dict[str, Block] = {}
-
-
+# Public API
 def emit_from_project(project: Project, kit: str = "Light") -> str:
     """Public API: emit Arduino C++ from a parsed project.
 
     Args:
         project: Parsed Project from the tolerant parser.
-        kit: Circuit kit name ("Light" or "Start").
+        kit: Circuit kit name ("Light", "Basic", or "Mobile").
 
     Returns:
         Source code string.
     """
-    global blocks_by_tag_lookup
-    blocks_by_tag_lookup = {b.tag: b for b in project.blocks if b.tag is not None}
     return emit_sketch(project, kit)
