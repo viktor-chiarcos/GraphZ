@@ -1,0 +1,364 @@
+{
+  "DiodeBlue1": {
+    "field_names": [
+      "ActionOptionValue",
+      "BlockConnectionTag",
+      "BlockType",
+      "ChosenActionIndex",
+      "DiamondBlock",
+      "MaskedTextBoxValue",
+      "OutputLine",
+      "OutputLineFromOrientation",
+      "OutputLineToOrientation",
+      "RealCoordsX",
+      "RealCoordsY",
+      "SubParams"
+    ],
+    "sample_tags": [
+      "DiodeBlue12"
+    ],
+    "sub_params_sample": null,
+    "iter_sample": null
+  },
+  "DiodeRed1": {
+    "field_names": [
+      "ActionOptionValue",
+      "BlockConnectionTag",
+      "BlockType",
+      "ChosenActionIndex",
+      "DiamondBlock",
+      "MaskedTextBoxValue",
+      "OutputLine",
+      "OutputLineFromOrientation",
+      "OutputLineToOrientation",
+      "RealCoordsX",
+      "RealCoordsY",
+      "SubParams"
+    ],
+    "sample_tags": [
+      "DiodeRed13",
+      "DiodeRed15"
+    ],
+    "sub_params_sample": null,
+    "iter_sample": null
+  },
+  "LEDMatrixDraw": {
+    "field_names": [
+      "ActionOptionValue",
+      "BlockConnectionTag",
+      "BlockType",
+      "ChosenActionIndex",
+      "DiamondBlock",
+      "MaskedTextBoxValue",
+      "OutputLine",
+      "OutputLineFromOrientation",
+      "OutputLineToOrientation",
+      "RealCoordsX",
+      "RealCoordsY",
+      "SubParams"
+    ],
+    "sample_tags": [
+      "LEDMatrixDraw1",
+      "LEDMatrixDraw2",
+      "LEDMatrixDraw3",
+      "LEDMatrixDraw4",
+      "LEDMatrixDraw6",
+      "LEDMatrixDraw8"
+    ],
+    "sub_params_sample": "Blue;LigthBlue;LigthBlue;none;none;none;none;none;Blue;LigthBlue;LigthBlue;none;",
+    "iter_sample": null
+  },
+  "LEDMatrixTemplate": {
+    "field_names": [
+      "ActionOptionValue",
+      "BlockConnectionTag",
+      "BlockType",
+      "ChosenActionIndex",
+      "DiamondBlock",
+      "MaskedTextBoxValue",
+      "OutputLine",
+      "OutputLineFromOrientation",
+      "OutputLineToOrientation",
+      "RealCoordsX",
+      "RealCoordsY",
+      "SubParams"
+    ],
+    "sample_tags": [
+      "LEDMatrixTemplate1",
+      "LEDMatrixTemplate3",
+      "LEDMatrixTemplate4",
+      "LEDMatrixTemplate5",
+      "LEDMatrixTemplate6"
+    ],
+    "sub_params_sample": "Rainbow",
+    "iter_sample": null
+  },
+  "LEDMatrixText": {
+    "field_names": [
+      "ActionOptionValue",
+      "BlockConnectionTag",
+      "BlockType",
+      "ChosenActionIndex",
+      "DiamondBlock",
+      "MaskedTextBoxValue",
+      "OutputLine",
+      "OutputLineFromOrientation",
+      "OutputLineToOrientation",
+      "RealCoordsX",
+      "RealCoordsY",
+      "SubParams"
+    ],
+    "sample_tags": [
+      "LEDMatrixText1",
+      "LEDMatrixText2",
+      "LEDMatrixText3",
+      "LEDMatrixText4",
+      "LEDMatrixText5",
+      "LEDMatrixText6",
+      "LEDMatrixText7"
+    ],
+    "sub_params_sample": "255,255,255;375; customtext.arduino-light.znatokgraphz.graphviz(\"Benutzerdefinie",
+    "iter_sample": null
+  },
+  "Lamp": {
+    "field_names": [
+      "ActionOptionValue",
+      "BlockConnectionTag",
+      "BlockType",
+      "ChosenActionIndex",
+      "DiamondBlock",
+      "MaskedTextBoxValue",
+      "OutputLine",
+      "OutputLineFromOrientation",
+      "OutputLineToOrientation",
+      "RealCoordsX",
+      "RealCoordsY",
+      "SubParams"
+    ],
+    "sample_tags": [
+      "Lamp1",
+      "Lamp3",
+      "Lamp5"
+    ],
+    "sub_params_sample": null,
+    "iter_sample": null
+  },
+  "Motor": {
+    "field_names": [
+      "ActionOptionValue",
+      "BlockConnectionTag",
+      "BlockType",
+      "ChosenActionIndex",
+      "DiamondBlock",
+      "MaskedTextBoxValue",
+      "OutputLine",
+      "OutputLineFromOrientation",
+      "OutputLineToOrientation",
+      "RealCoordsX",
+      "RealCoordsY",
+      "SubParams"
+    ],
+    "sample_tags": [
+      "Motor3",
+      "Motor5",
+      "Motor6"
+    ],
+    "sub_params_sample": null,
+    "iter_sample": null
+  },
+  "PairBlock": {
+    "field_names": [
+      "BlockConnectionTag",
+      "BlockType",
+      "DiamondBlock",
+      "IterationsPairBlock",
+      "OutputLine",
+      "OutputLineFromOrientation",
+      "OutputLineToOrientation",
+      "RealCoordsX",
+      "RealCoordsY"
+    ],
+    "sample_tags": [
+      "PairBlock2"
+    ],
+    "sub_params_sample": null,
+    "iter_sample": "5"
+  },
+  "PairLowerBlock": {
+    "field_names": [
+      "BlockConnectionTag",
+      "BlockType",
+      "DiamondBlock",
+      "OutputLine",
+      "OutputLineFromOrientation",
+      "OutputLineToOrientation",
+      "RealCoordsX",
+      "RealCoordsY"
+    ],
+    "sample_tags": [
+      "PairLowerBlock3"
+    ],
+    "sub_params_sample": null,
+    "iter_sample": null
+  },
+  "RGB": {
+    "field_names": [
+      "ActionOptionValue",
+      "BlockConnectionTag",
+      "BlockType",
+      "ChosenActionIndex",
+      "DiamondBlock",
+      "MaskedTextBoxValue",
+      "OutputLine",
+      "OutputLineFromOrientation",
+      "OutputLineToOrientation",
+      "RealCoordsX",
+      "RealCoordsY",
+      "SubParams"
+    ],
+    "sample_tags": [
+      "RGB1",
+      "RGB2",
+      "RGB3",
+      "RGB4",
+      "RGB5",
+      "RGB7"
+    ],
+    "sub_params_sample": null,
+    "iter_sample": null
+  },
+  "Start": {
+    "field_names": [
+      "ActionOptionValue",
+      "BlockConnectionTag",
+      "BlockType",
+      "ChosenActionIndex",
+      "DiamondBlock",
+      "MaskedTextBoxValue",
+      "OutputLine",
+      "OutputLineFromOrientation",
+      "OutputLineToOrientation",
+      "RealCoordsX",
+      "RealCoordsY",
+      "SubParams"
+    ],
+    "sample_tags": [
+      "Start1",
+      "Start11",
+      "Start13",
+      "Start15",
+      "Start2",
+      "Start3",
+      "Start4",
+      "Start5",
+      "Start6",
+      "Start8"
+    ],
+    "sub_params_sample": null,
+    "iter_sample": null
+  },
+  "Synth": {
+    "field_names": [
+      "ActionOptionValue",
+      "BlockConnectionTag",
+      "BlockType",
+      "ChosenActionIndex",
+      "DiamondBlock",
+      "MaskedTextBoxValue",
+      "OutputLine",
+      "OutputLineFromOrientation",
+      "OutputLineToOrientation",
+      "RealCoordsX",
+      "RealCoordsY",
+      "SubParams"
+    ],
+    "sample_tags": [
+      "Synth5"
+    ],
+    "sub_params_sample": null,
+    "iter_sample": null
+  },
+  "Timer": {
+    "field_names": [
+      "ActionOptionValue",
+      "BlockConnectionTag",
+      "BlockType",
+      "ChosenActionIndex",
+      "DiamondBlock",
+      "MaskedTextBoxValue",
+      "OutputLine",
+      "OutputLineFromOrientation",
+      "OutputLineToOrientation",
+      "RealCoordsX",
+      "RealCoordsY",
+      "SubParams"
+    ],
+    "sample_tags": [
+      "Timer1",
+      "Timer11",
+      "Timer13",
+      "Timer2",
+      "Timer3",
+      "Timer4",
+      "Timer5",
+      "Timer6",
+      "Timer7",
+      "Timer8"
+    ],
+    "sub_params_sample": null,
+    "iter_sample": null
+  },
+  "TrafficLight": {
+    "field_names": [
+      "ActionOptionValue",
+      "BlockConnectionTag",
+      "BlockType",
+      "ChosenActionIndex",
+      "DiamondBlock",
+      "MaskedTextBoxValue",
+      "OutputLine",
+      "OutputLineFromOrientation",
+      "OutputLineToOrientation",
+      "RealCoordsX",
+      "RealCoordsY",
+      "SubParams"
+    ],
+    "sample_tags": [
+      "TrafficLight1",
+      "TrafficLight10",
+      "TrafficLight11",
+      "TrafficLight12",
+      "TrafficLight14",
+      "TrafficLight2",
+      "TrafficLight3",
+      "TrafficLight4",
+      "TrafficLight5",
+      "TrafficLight6"
+    ],
+    "sub_params_sample": null,
+    "iter_sample": null
+  },
+  "UniversalIndicator": {
+    "field_names": [
+      "ActionOptionValue",
+      "BlockConnectionTag",
+      "BlockType",
+      "ChosenActionIndex",
+      "DiamondBlock",
+      "MaskedTextBoxValue",
+      "OutputLine",
+      "OutputLineFromOrientation",
+      "OutputLineToOrientation",
+      "RealCoordsX",
+      "RealCoordsY",
+      "SubParams"
+    ],
+    "sample_tags": [
+      "UniversalIndicator2",
+      "UniversalIndicator3",
+      "UniversalIndicator4"
+    ],
+    "sub_params_sample": null,
+    "iter_sample": null
+  }
+}

@@ -1,0 +1,31 @@
+# Vendor content extracted from the original Windows application.
+programms/wine/
+
+# Oracle captures. Generated vendor sketches and extracted assets must never
+# be committed.
+oracle/
+
+# Raw generated corpora.
+corpus/
+*.ino
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+programms/linux/build/
+programms/linux/dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Frontend
+node_modules/
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store

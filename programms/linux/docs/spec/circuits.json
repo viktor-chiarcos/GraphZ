@@ -1,0 +1,262 @@
+{
+  "Basic": {
+    "1": {
+      "name": "Control_LED-1-5 CTP. 37",
+      "imgFileName": "01_Control_LED-1-5.png"
+    },
+    "2": {
+      "name": "Control_LED-7-8 CTP. 43",
+      "imgFileName": "01_Control_LED-7-9.png"
+    },
+    "3": {
+      "name": "Control_LED-13 CTP. 47",
+      "imgFileName": "01_Control_LED-10-14.png"
+    },
+    "4": {
+      "name": "Traffic_Light-1 CTP. 54",
+      "imgFileName": "02_Traffic_Light-1.png"
+    },
+    "5": {
+      "name": "Traffic_Light-2 CTP. 57",
+      "imgFileName": "02_Traffic_Light-2.png"
+    },
+    "6": {
+      "name": "Traffic_Light-3-4 CTP. 58",
+      "imgFileName": "02_Traffic_Light-3-4.png"
+    },
+    "7": {
+      "name": "RGB_Mix-1 CTP. 61",
+      "imgFileName": "03_RGB_Mix-1.png"
+    },
+    "8": {
+      "name": "RGB_Mix-2-3 CTP. 63",
+      "imgFileName": "03_RGB_Mix-2-3.png"
+    },
+    "9": {
+      "name": "Motor_Control-1 CTP. 69",
+      "imgFileName": "05_Motor_Control-1.png"
+    },
+    "10": {
+      "name": "Motor_Control-2 CTP. 71",
+      "imgFileName": "05_Motor_Control-2.png"
+    },
+    "11": {
+      "name": "Motor_Control-3 CTP. 73",
+      "imgFileName": "05_Motor_Control-3.png"
+    },
+    "12": {
+      "name": "Lamp_Control-1 CTP. 74",
+      "imgFileName": "06_Lamp_Control-1.png"
+    },
+    "13": {
+      "name": "Lamp_Control-4 CTP. 78",
+      "imgFileName": "06_Lamp_Control-4.png"
+    },
+    "14": {
+      "name": "Lamp_Control-5-7 CTP. 79",
+      "imgFileName": "06_Lamp_Control-5-7.png"
+    },
+    "15": {
+      "name": "Synth-2a-b CTP. 80",
+      "imgFileName": "07_Synth-2a-c-S.png"
+    },
+    "16": {
+      "name": "Signaling-1 CTP. 83",
+      "imgFileName": "08_Signaling-1.png"
+    },
+    "17": {
+      "name": "Signaling-2a-2b CTP. 84",
+      "imgFileName": "08_Signaling-2a-2b.png"
+    },
+    "18": {
+      "name": "Mix-1 CTP. 86",
+      "imgFileName": "09_Mix-1.PNG"
+    },
+    "19": {
+      "name": "Mix-2 CTP. 87",
+      "imgFileName": "09_Mix-2.PNG"
+    },
+    "20": {
+      "name": "Timer-1 CTP. 90",
+      "imgFileName": "11_Timer-1.png"
+    },
+    "21": {
+      "name": "Timer-2 CTP. 91",
+      "imgFileName": "11_Timer-2.png"
+    },
+    "22": {
+      "name": "Binary-1 CTP. 94",
+      "imgFileName": "13_Binary-1.png"
+    },
+    "23": {
+      "name": "Climate-control CTP. 113",
+      "imgFileName": "22_Climate-control.png"
+    },
+    "24": {
+      "name": "Smart Light-1_5-6 CTP. 114",
+      "imgFileName": "23_Smart Light-1_5-6.png"
+    },
+    "25": {
+      "name": "Distance CTP. 118",
+      "imgFileName": "25_Distance.png"
+    },
+    "26": {
+      "name": "Robo-1 CTP. 121",
+      "imgFileName": "26_Robo-1.png"
+    },
+    "27": {
+      "name": "Robo-Lamp-1 CTP. 122",
+      "imgFileName": "27_Robo-Lamp-1.png"
+    },
+    "28": {
+      "name": "Robo_Music-1 CTP. 124",
+      "imgFileName": "28_Robo_Music-1.png"
+    },
+    "29": {
+      "name": "Robo_Police-1 CTP. 125",
+      "imgFileName": "29_Robo_Police-1.png"
+    },
+    "30": {
+      "name": "Safety-1 CTP. 126",
+      "imgFileName": "30_Safety-1.png"
+    },
+    "31": {
+      "name": "Safety-2 CTP. 127",
+      "imgFileName": "30_Safety-2.png"
+    }
+  },
+  "Light": {
+    "1": {
+      "name": "Light_01-18 CTP. 21",
+      "imgFileName": "00_Light_01-18.png"
+    },
+    "2": {
+      "name": "Light_01-11 CTP. 30",
+      "imgFileName": "01_Light_01-11.png"
+    },
+    "3": {
+      "name": "Light_01-06 CTP. 34",
+      "imgFileName": "02_Light_01-06.png"
+    },
+    "4": {
+      "name": "Light_01-04 CTP. 36",
+      "imgFileName": "03_Light_01-04.png"
+    }
+  },
+  "Start": {
+    "1": {
+      "name": "Control_LED-1-5 CTP. 28",
+      "imgFileName": "01_Control_LED-1-5.png"
+    },
+    "2": {
+      "name": "Control_LED-7-8 CTP. 34",
+      "imgFileName": "01_Control_LED-7-9.png"
+    },
+    "3": {
+      "name": "Control_LED-13 CTP.38",
+      "imgFileName": "01_Control_LED-10-14.png"
+    },
+    "4": {
+      "name": "RGB_Mix-1 CTP. 46",
+      "imgFileName": "03_RGB_Mix-1.png"
+    },
+    "5": {
+      "name": "RGB_Mix-2-3 CTP. 48",
+      "imgFileName": "03_RGB_Mix-2-3.png"
+    },
+    "6": {
+      "name": "Motor_Control-1 CTP. 54",
+      "imgFileName": "05_Motor_Control-1.png"
+    },
+    "7": {
+      "name": "Motor_Control-2 CTP. 56",
+      "imgFileName": "05_Motor_Control-2.png"
+    },
+    "8": {
+      "name": "Lamp_Control-1 CTP. 58",
+      "imgFileName": "06_Lamp_Control-1.png"
+    },
+    "9": {
+      "name": "Lamp_Control-4 CTP. 60",
+      "imgFileName": "06_Lamp_Control-4.png"
+    },
+    "10": {
+      "name": "Lamp_Control-5-7 CTP. 61",
+      "imgFileName": "06_Lamp_Control-5-7.png"
+    },
+    "11": {
+      "name": "Synth-2a-b CTP. 63",
+      "imgFileName": "07_Synth-2a-c-S.png"
+    },
+    "12": {
+      "name": "Signaling-1 CTP. 66",
+      "imgFileName": "08_Signaling-1.png"
+    },
+    "13": {
+      "name": "Signaling-2a-2b CTP. 67",
+      "imgFileName": "08_Signaling-2a-2b.png"
+    },
+    "14": {
+      "name": "Smart Light-1_5-6 CTP. 72",
+      "imgFileName": "23_Smart Light-1_5-6.png"
+    }
+  },
+  "Mobile": {
+    "1": {
+      "name": "LightAndSound_01-02 CTP. 30",
+      "imgFileName": "01_LightAndSound_01-02.png"
+    },
+    "2": {
+      "name": "LightAndSound_03-05 CTP. 32",
+      "imgFileName": "01_LightAndSound_03-05.png"
+    },
+    "3": {
+      "name": "LightAndSound_06 CTP. 34",
+      "imgFileName": "01_LightAndSound_06.png"
+    },
+    "4": {
+      "name": "LightAndSound_07-08 CTP. 36",
+      "imgFileName": "01_LightAndSound_07-08.png"
+    },
+    "5": {
+      "name": "LightAndSound_09-10 CTP. 38",
+      "imgFileName": "01_LightAndSound_09-10.png"
+    },
+    "6": {
+      "name": "LightAndSound_11-12 CTP. 40",
+      "imgFileName": "01_LightAndSound_11-12.png"
+    },
+    "7": {
+      "name": "LightAndSound_13-16 CTP. 42",
+      "imgFileName": "01_LightAndSound_13-16.png"
+    },
+    "8": {
+      "name": "LightAndSound_19-21 CTP. 46",
+      "imgFileName": "01_LightAndSound_19-21.png"
+    },
+    "9": {
+      "name": "LightAndSound_22-25 CTP. 48",
+      "imgFileName": "01_LightAndSound_22-25.png"
+    },
+    "10": {
+      "name": "Motors_02-03 CTP. 74",
+      "imgFileName": "02_Motors_02-03.png"
+    },
+    "11": {
+      "name": "Motors_08 CTP. 78",
+      "imgFileName": "02_Motors_08.png"
+    },
+    "12": {
+      "name": "Drive",
+      "imgFileName": "Drive.PNG"
+    },
+    "13": {
+      "name": "Mobile_03 CTP. 99",
+      "imgFileName": "04_Mobile_03.PNG"
+    },
+    "14": {
+      "name": "Mobile_05 CTP. 101",
+      "imgFileName": "04_Mobile_05.PNG"
+    }
+  }
+}
