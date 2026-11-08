@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GraphZ Blockly Editor</title>
+  <link rel="stylesheet" href="https://developers.google.com/blockly/static/blockly/msg/js/blockly_rtl.css">
+  <link rel="stylesheet" href="https://developers.google.com/blockly/static/blockly/blockly_compressed.css">
+  <style>
+    body { margin: 0; overflow: hidden; height: 100%; width: 100%; }
+    #blockly { position: absolute; top: 0; left: 0; right: 0; bottom: 0; }
+    .toolbar { position: absolute; top: 0; left: 0; right: 250px; height: 30px; background: #f0f0f0; padding: 4px; border-bottom: 1px solid #ddd; z-index: 100; }
+    .workspace { left: 250px; }
+    .console { position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: #e0e0e0; padding: 4px; font-family: monospace; white-space: pre; overflow: auto; z-index: 100; }
+  </style>
+</head>
+<body>
+  <div id="blockly" class="workspace"></div>
+  <div class="console" id="console"></div>
+  
+  <!-- Load Blockly CSS and JS from CDN -->
+  <script src="https://developers.google.com/blockly/static/blockly/msg/js/blockly_compressed.js"></script>
+  <script>
+    // <![CDATA[
+    
+    // Custom blocks for GraphZ
+    Blockly.Blocks['start'] = {
+      init: function() {
+        this.appendStatement('actions', {
+          kind: 'input_statement',
+          name: 'actions',
+          check: 'null'
+        });
+        this.setColour(330);
+        this.setTooltip('Start block - program entry point');
+        this.setHelpUrl('');
+      }
+    };
+    
+    Blockly.Blocks['timer'] = {
+      init: function() {
+        this.appendValue('duration', {
+          kind: 'number',
+          name: 'duration',
+          check: 'Number'
+        });
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(120);
+        this.setTooltip('Timer block - delay in centiseconds');
+        this.setHelpUrl('');
+      }
+    };
+    
+    Blockly.Blocks['led_matrix_text'] = {
+      init: function() {
+        this.appendValue('text', {
+          kind: 'text',
+          name: 'text',
+          text: 'Hello World'
+        });
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(230);
+        this.setTooltip('LED Matrix Text block');
+        this.setHelpUrl('');
+      }
+    };
+    
+    Blockly.Blocks['pair'] = {
+      init: function() {
+        this.appendValue('iterations', {
+          kind: 'number',
+          name: 'iterations',
+          check: 'Number',
+          value: 4
+        });
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(160);
+        this.setTooltip('Loop block with iterations');
+        this.setHelpUrl('');
+      }
+    };
+    
+    Blockly.Blocks['timer_basic'] = {
+      init: function() {
+        this.appendValue('duration', {
+          kind: 'number',
+          name: 'duration',
+          check: 'Number'
+        });
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(120);
+        this.setTooltip('Timer block');
+        this.setHelpUrl('');
+      }
+    };
+    
+    // Workspace creation
+    const workspace = Blockly.inject('blockly', {
+      path: 'https://developers.google.com/blockly/static/demos',
+      toolbox: [
+        ['start', 'timer'],
+        ['LED Matrix', 'led_matrix_text'],
+        ['Loops', 'pair'],
+        ['Basic', 'timer_basic']
+      ],
+      grid: {
+        spacing: 20,
+        length: 3,
+        colour: '#ccc',
+        snap: true
+      },
+      comments: false,
+      cursorShape: 'default',
+      collapse: false,
+      disable: false,
+      oneBasedIndex: true,
+      trashcan: true,
+      scrollbars: true,
+      wheel: true,
+      resize: true,
+      disable: false
+    });
+    
+    // Display generated code
+    const container = document.getElementById('console');
+    const showCode = function() {
+      const code = Blockly.JavaScript.workspaceToCode(workspace);
+      container.innerHTML = '<pre>' + code.replace(/"/g, '"').replace(/'/g, ''') + '</pre>';
+    };
+    
+    // Buttons
+    document.getElementById('genButton')?.addEventListener('click', showCode);
+    // Initial display
+    showCode();
+    
+    // <![CDATA]>
+  </script>
+</body>
+</html>
