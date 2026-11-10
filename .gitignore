@@ -24,6 +24,7 @@ htmlcov/
 
 # Frontend
 node_modules/
+programms/linux/web/dist/
 
 # Editor / OS
 .vscode/

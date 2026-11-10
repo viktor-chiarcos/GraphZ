@@ -4,140 +4,62 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GraphZ Blockly Editor</title>
-  <link rel="stylesheet" href="https://developers.google.com/blockly/static/blockly/msg/js/blockly_rtl.css">
-  <link rel="stylesheet" href="https://developers.google.com/blockly/static/blockly/blockly_compressed.css">
-  <style>
-    body { margin: 0; overflow: hidden; height: 100%; width: 100%; }
-    #blockly { position: absolute; top: 0; left: 0; right: 0; bottom: 0; }
-    .toolbar { position: absolute; top: 0; left: 0; right: 250px; height: 30px; background: #f0f0f0; padding: 4px; border-bottom: 1px solid #ddd; z-index: 100; }
-    .workspace { left: 250px; }
-    .console { position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: #e0e0e0; padding: 4px; font-family: monospace; white-space: pre; overflow: auto; z-index: 100; }
-  </style>
+  <link rel="icon" href="data:,">
+  <script type="module" src="/src/main.ts"></script>
 </head>
 <body>
-  <div id="blockly" class="workspace"></div>
-  <div class="console" id="console"></div>
-  
-  <!-- Load Blockly CSS and JS from CDN -->
-  <script src="https://developers.google.com/blockly/static/blockly/msg/js/blockly_compressed.js"></script>
-  <script>
-    // <![CDATA[
-    
-    // Custom blocks for GraphZ
-    Blockly.Blocks['start'] = {
-      init: function() {
-        this.appendStatement('actions', {
-          kind: 'input_statement',
-          name: 'actions',
-          check: 'null'
-        });
-        this.setColour(330);
-        this.setTooltip('Start block - program entry point');
-        this.setHelpUrl('');
-      }
-    };
-    
-    Blockly.Blocks['timer'] = {
-      init: function() {
-        this.appendValue('duration', {
-          kind: 'number',
-          name: 'duration',
-          check: 'Number'
-        });
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setColour(120);
-        this.setTooltip('Timer block - delay in centiseconds');
-        this.setHelpUrl('');
-      }
-    };
-    
-    Blockly.Blocks['led_matrix_text'] = {
-      init: function() {
-        this.appendValue('text', {
-          kind: 'text',
-          name: 'text',
-          text: 'Hello World'
-        });
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setColour(230);
-        this.setTooltip('LED Matrix Text block');
-        this.setHelpUrl('');
-      }
-    };
-    
-    Blockly.Blocks['pair'] = {
-      init: function() {
-        this.appendValue('iterations', {
-          kind: 'number',
-          name: 'iterations',
-          check: 'Number',
-          value: 4
-        });
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setColour(160);
-        this.setTooltip('Loop block with iterations');
-        this.setHelpUrl('');
-      }
-    };
-    
-    Blockly.Blocks['timer_basic'] = {
-      init: function() {
-        this.appendValue('duration', {
-          kind: 'number',
-          name: 'duration',
-          check: 'Number'
-        });
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setColour(120);
-        this.setTooltip('Timer block');
-        this.setHelpUrl('');
-      }
-    };
-    
-    // Workspace creation
-    const workspace = Blockly.inject('blockly', {
-      path: 'https://developers.google.com/blockly/static/demos',
-      toolbox: [
-        ['start', 'timer'],
-        ['LED Matrix', 'led_matrix_text'],
-        ['Loops', 'pair'],
-        ['Basic', 'timer_basic']
-      ],
-      grid: {
-        spacing: 20,
-        length: 3,
-        colour: '#ccc',
-        snap: true
-      },
-      comments: false,
-      cursorShape: 'default',
-      collapse: false,
-      disable: false,
-      oneBasedIndex: true,
-      trashcan: true,
-      scrollbars: true,
-      wheel: true,
-      resize: true,
-      disable: false
-    });
-    
-    // Display generated code
-    const container = document.getElementById('console');
-    const showCode = function() {
-      const code = Blockly.JavaScript.workspaceToCode(workspace);
-      container.innerHTML = '<pre>' + code.replace(/"/g, '"').replace(/'/g, ''') + '</pre>';
-    };
-    
-    // Buttons
-    document.getElementById('genButton')?.addEventListener('click', showCode);
-    // Initial display
-    showCode();
-    
-    // <![CDATA]>
-  </script>
+  <div id="app">
+    <header class="toolbar">
+      <div class="brand">
+        <span class="brand-mark">G</span>
+        <span>GraphZ Blockly Editor</span>
+      </div>
+      <div class="controls">
+        <label>Kit
+          <select id="kit"></select>
+        </label>
+        <label>Circuit
+          <select id="circuit"></select>
+        </label>
+        <label>Mode
+          <select id="mode"></select>
+        </label>
+        <span class="divider"></span>
+        <button id="newButton" class="secondary">New</button>
+        <button id="importButton" class="secondary">Import .gphz</button>
+        <button id="exportButton" class="secondary">Export .gphz</button>
+        <button id="matrixButton" class="secondary">Edit matrix</button>
+        <button id="generateButton" class="primary">Generate C++</button>
+        <input id="fileInput" type="file" accept=".gphz,application/json" hidden>
+      </div>
+    </header>
+
+    <main>
+      <section id="blockly" aria-label="Blockly workspace"></section>
+      <aside class="preview-pane">
+        <div class="pane-header">
+          <span>C++ preview</span>
+          <span class="hint">Live, kit-specific</span>
+        </div>
+        <pre id="preview"></pre>
+        <div id="status" class="status" data-kind="info">Ready.</div>
+      </aside>
+    </main>
+  </div>
+
+  <div id="matrixModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="matrixTitle">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2 id="matrixTitle">Edit 8x8 matrix</h2>
+        <p>Choose a colour for each pixel. Row 1 starts at the top-left.</p>
+      </div>
+      <div id="matrixGrid" class="matrix-grid"></div>
+      <div class="modal-actions">
+        <button id="matrixClear" class="secondary">Clear</button>
+        <button id="matrixCancel" class="secondary">Cancel</button>
+        <button id="matrixSave" class="primary">Save matrix</button>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

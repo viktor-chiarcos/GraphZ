@@ -75,42 +75,88 @@ graphz validate project.gphz
 
 ## Blockly Visual Editor
 
-The Blockly editor provides a drag-and-drop interface for creating GraphZ programs.
+The editor is a Vite + TypeScript + Blockly application in `web/`. It reads the
+kit, circuit and block registries from `docs/spec/` so the palette and preview
+cannot drift from the documented specs.
 
 ### Launch
 ```bash
-# Open in browser (served from the project directory)
-python3 -m http.server 8080
-# Then open http://localhost:8080/web/blockly_editor.html
+cd web
+npm install
+npm run dev
+# Open http://localhost:8080/web/blockly_editor.html
 ```
 
-Or open directly: `file:///home/viktor-chiarcos/GitHub/GraphZ/programms/linux/web/blockly_editor.html`
+Node.js 18 or newer is required for the frontend toolchain. To verify a
+production build:
+
+```bash
+cd web
+npm run build
+npm run preview
+```
 
 ### Features
-- **Kit selection**: Light, Start, Basic, Mobile
-- **Mode selection**: Newbie, Expert
-- **Custom blocks**:
-  - `start` - program entry point (ChosenActionIndex = "-1")
-  - `timer` - delay in centiseconds (×100 = ms)
-  - `led_matrix_text` - display text on LED matrix
-  - `led_matrix_draw` - set matrix pixel colors
-  - `pair` - loop block with iteration count
-  - `timer_basic` - basic timer for Basic kit
-- **Generate code**: Click "Generate" to produce JavaScript text representation
-- **Reset**: Trash can removes all blocks
+- **Kit / circuit / mode selectors**: Light, Start, Basic, Mobile; 63 circuits;
+  Newbie and Expert modes.
+- **Filtered palette**: only blocks relevant to the selected kit and mode.
+- **Custom blocks**: Start, Timer, loop (PairBlock/PairLowerBlock), LED matrix
+  text/draw/template, Lamp, RGB, TrafficLight, UniversalIndicator, Motor, Synth,
+  red/blue diodes.
+- **Matrix editor**: click an LED matrix draw block, then "Edit matrix" for an
+  8x8 colour grid.
+- **Live C++ preview**: generated from the Blockly workspace using the kit pin
+  profiles in `docs/spec/codegen.md`.
+- **Import / export `.gphz`**: tolerant import (BOM, unescaped quotes, raw
+  newlines) and legacy array-shaped export.
+- **Undo/redo, zoom/pan, trashcan**: provided by Blockly.
 
 ### Block Definitions
-| Block | Purpose | Fields |
-|-------|---------|--------|
-| `start` | Program entry point | - |
-| `timer` | Delay (centiseconds) | `duration` (number) |
-| `led_matrix_text` | Display text on matrix | `text` (string) |
-| `led_matrix_draw` | Draw on matrix | `colours` (string triplets), `pin` (number) |
-| `pair` | Loop with iterations | `iterations` (number) |
-| `timer_basic` | Basic kit timer | `duration` (number) |
+| Block | GraphZ type | Fields |
+|-------|-------------|--------|
+| Start | `Start` | - |
+| Timer | `Timer` | `DURATION` (centiseconds) |
+| Loop | `PairBlock` / `PairLowerBlock` | `ITERATIONS` |
+| Matrix text | `LEDMatrixText` | `TEXT`, `COLOUR`, `SPEED` |
+| Matrix draw | `LEDMatrixDraw` | `PIXELS` (64 named colours) |
+| Matrix template | `LEDMatrixTemplate` | `TEMPLATE` |
+| Lamp / RGB / traffic light / indicator / diodes | matching GraphZ types | `ACTION`, `VALUE` |
+| Motor | `Motor` | `ACTION`, `VALUE` (speed) |
+| Synth | `Synth` | `ACTION`, `VALUE` |
 
-### Output
-The editor can output JavaScript code representation of the block graph, which can be adapted for Arduino C++ generation.
+### Frontend layout
+```text
+web/
+  blockly_editor.html   # Vite entry point
+  package.json          # npm scripts and Blockly dependency
+  vite.config.ts        # dev/preview server on port 8080, base /web/
+  tsconfig.json
+  src/
+    main.ts             # workspace setup, toolbar wiring, live preview
+    spec.ts             # loads docs/spec/*.json and colour helpers
+    blocks/
+      registry.ts       # Blockly JSON definitions + .gphz field mapping
+      toolbox.ts        # kit/mode filtered toolbox
+    graphz/
+      parse.ts          # tolerant .gphz JSON repair
+      serialize.ts      # import/export of legacy array-shaped .gphz
+      codegen.ts        # client-side C++ preview
+    styles.css
+```
+
+The editor loads `docs/spec/circuits.json`, `blocks.json`, `colors.json` and
+`codegen.md` conventions directly, so keep those files as the source of truth.
+Unknown GraphZ action indices are preserved in the `ACTION`/`VALUE` fields
+rather than being discarded, which keeps import/export lossless for the parts
+the spec does not yet describe.
+
+### Notes
+- `python3 -m http.server` only serves the old static HTML; use `npm run dev`
+  (or `npm run build && npm run preview`) for the Vite editor.
+- If port 8080 is occupied, stop the previous server or edit `server.port` and
+  `preview.port` in `web/vite.config.ts`.
+- The C++ preview is intended for editing feedback. Compile and upload still use
+  the Python CLI and `arduino-cli`.
 
 ## CLI Reference
 
@@ -141,6 +187,15 @@ The editor can output JavaScript code representation of the block graph, which c
 ```bash
 cd programms/linux
 pytest                          # Run all 135 tests
-graphz generate <file>            # Generate a sketch
-graphz validate <file>            # Validate structure
+graphz generate <file>          # Generate a sketch
+graphz validate <file>          # Validate structure
+```
+
+Frontend checks:
+
+```bash
+cd programms/linux/web
+npm run typecheck               # TypeScript only
+npm run build                   # Typecheck + production bundle in web/dist/
+npm run preview                 # Serve the built bundle on port 8080
 ```
