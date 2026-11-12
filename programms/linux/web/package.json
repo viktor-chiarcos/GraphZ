@@ -16,5 +16,8 @@
     "@types/node": "^26.6.6",
     "typescript": "^5.6.3",
     "vite": "^6.0.7"
+  },
+  "allowScripts": {
+    "esbuild@0.25.12": true
   }
 }
